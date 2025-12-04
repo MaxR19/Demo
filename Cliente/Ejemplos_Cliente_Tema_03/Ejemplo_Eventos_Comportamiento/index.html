@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>event.preventDefault()</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    input {
+      padding: 8px;
+      margin-right: 10px;
+    }
+
+    .error {
+      color: red;
+      font-weight: bold;
+    }
+
+    .success {
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>✉️ Enviar formulario</h1>
+
+  <form id="formulario">
+    <input type="text" id="nombre" placeholder="Escribe tu nombre" required/>
+    <button type="submit">Enviar</button>
+  </form>
+
+  <div id="mensaje"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

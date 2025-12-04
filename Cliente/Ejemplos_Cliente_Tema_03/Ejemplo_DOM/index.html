@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM: Navegación</title>
+  <style>
+    .seleccionado {
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <h1>Navegación DOM</h1>
+
+  <div id="contenedor">
+    <p>Primer párrafo</p>
+    <p>Segundo párrafo</p>
+    <p>Tercer párrafo</p>
+  </div>
+
+  <button onclick="resaltarPrimerHijo()">Resaltar Primer Hijo</button>
+  <button onclick="resaltarUltimoHijo()">Resaltar Último Hijo</button>
+  <button onclick="resaltarSiguiente()">Resaltar Siguiente</button>
+  <button onclick="resaltarAnterior()">Resaltar Anterior</button>
+  <button onclick="resetear()">Resetear</button>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

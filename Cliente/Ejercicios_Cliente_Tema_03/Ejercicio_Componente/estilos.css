@@ -1,0 +1,32 @@
+/* Estilos generales */
+  #Cabecera, .fila {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+  }
+
+  #Cabecera {
+    background: #007acc;
+    color: white;
+    font-weight: bold;
+  }
+
+  .fila:nth-child(even) {
+    background: #f8f8f8;
+  }
+
+  .fila div, #Cabecera div {
+    padding: 8px 12px;
+    border-right: 1px solid #ddd;
+  }
+
+  .fila div:last-child, #Cabecera div:last-child {
+    border-right: none;
+  }
+
+  /* Contenedor general opcional */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }

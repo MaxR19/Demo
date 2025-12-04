@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>API de Geolocalización</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .ubicacion {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      padding: 10px;
+      border: 2px dashed #4caf50;
+      display: inline-block;
+      background-color: #f0fff0;
+    }
+
+    .error {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🌍 Obtener ubicación actual</h1>
+  <button onclick="obtenerUbicacion()">📍 Obtener ubicación</button>
+
+  <div id="resultado" class="ubicacion">
+    Esperando ubicación...
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

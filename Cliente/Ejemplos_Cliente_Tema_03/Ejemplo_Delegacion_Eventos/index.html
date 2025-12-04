@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Delegación de Eventos</title>
+  <style>
+    #lista {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      padding: 8px;
+      border-bottom: 1px solid #ccc;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    button.eliminar {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📝 Lista de Tareas</h1>
+
+  <input type="text" id="nuevaTarea" placeholder="Escribe una tarea..." />
+  <button id="agregar">Agregar tarea</button>
+
+  <ul id="lista"></ul>
+
+  <script src="script.js"></script>
+</body>
+</html>

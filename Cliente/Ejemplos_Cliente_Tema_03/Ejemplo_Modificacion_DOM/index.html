@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Modificación del DOM</title>
+  <style>
+    .resaltado {
+      background-color: lightblue;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="titulo">DOM: Modificación</h1>
+
+  <div id="contenedor">
+    <p id="parrafo1">Este es el párrafo original.</p>
+  </div>
+
+  <button onclick="modificarTexto()">Modificar texto</button>
+  <button onclick="insertarNuevo()">Insertar nuevo párrafo</button>
+  <button onclick="clonarUltimo()">Clonar último párrafo</button>
+  <button onclick="eliminarUltimo()">Eliminar último párrafo</button>
+  <button onclick="resaltarPrimero()">Resaltar primero</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

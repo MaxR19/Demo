@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Manejador de Eventos</title>
+</head>
+
+<body>
+    <button id="boton1" onclick="saludar()">Pulsa el botón</button>
+    <button id="boton2">Pulsa el botón</button>
+    <button id="boton3">Pulsa el botón</button>
+    <script>        
+        let contador = 0;
+
+        function saludar() {
+            alert("¡Hola Mundo!");
+        }
+        function saludar2() {
+            contador++;
+            console.log(contador);
+            alert("¡Hola otra vez!");
+        }
+
+        document.getElementById("boton2").onclick = saludar;
+        let boton = document.getElementById("boton3");
+        boton.addEventListener("click", saludar);
+        boton.addEventListener("click", saludar2, {once: true});
+        
+    </script>
+</body>
+
+</html>

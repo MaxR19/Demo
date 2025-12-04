@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Eventos en el DOM</title>
+  <style>
+    #contenedor {
+      padding: 20px;
+      border: 2px solid #444;
+      background-color: #f0f0f0;
+    }
+
+    .elemento {
+      margin: 10px;
+      padding: 10px;
+      border: 1px dashed #777;
+      background-color: white;
+      cursor: pointer;
+    }
+
+    .info {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎯 Ejemplo de propagación de eventos</h1>
+
+  <!-- Pasar evento desde HTML -->
+  <button onclick="mostrarEvento(event)">Haz clic aquí (inline)</button>
+
+  <div id="contenedor" class="ele">
+    <div class="elemento">Elemento 1</div>
+    <div class="elemento">Elemento 2</div>
+    <div class="elemento">Elemento 3</div>
+  </div>
+
+  <div class="info" id="infoBox">Haz clic en los elementos para ver info del evento</div>
+
+  <script src="script.js"></script>
+</body>
+</html>

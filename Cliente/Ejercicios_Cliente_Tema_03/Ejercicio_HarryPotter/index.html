@@ -1,0 +1,90 @@
+<!-- 
+ Tu proyecto tiene al menos dos vistas principales (páginas HTML):
+index.html: la “portada / inicio” donde se pueden elegir casas (Gryffindor, Hufflepuff, Ravenclaw, Slytherin, SinCasa) mediante el menú de navegación.
+Una vista de “resultado / lista” (cuando seleccionas una casa): el mismo index.html + scripts.js genera dinámicamente personajes de esa casa.
+Una vista de “detalle” — llamémosla Articulo.html (o la que uses) — donde mostrarás los detalles de un personaje particular cuando el usuario lo seleccione.
+
+El flujo que sigue un usuario típico:
+En index.html, el usuario pulsa un enlace del menú con onclick="datosHarryPotter('Casa')".
+scripts.js llama a la API, filtra personajes de esa casa, los ordena y los muestra en div#contenido como tarjetas (divs con imagen, nombre, año, etc.).
+Si el usuario hace clic en la imagen de un personaje, se guarda su id en localStorage y se redirige a la página Articulo.
+En Articulo.html, al cargarse, scripts.js detecta que la URL contiene "Articulo", recupera el id desde localStorage, vuelve a llamar a la API, filtra por ese id y muestra un solo personaje — la “ficha” detallada.
+
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Harry Potter - Portada</title>
+    <link rel="icon" href="iconos/harry.ico" />
+    <link rel="stylesheet" href="estilos.css" />
+    <script src="scripts.js" defer></script>
+    <script src="scriptsMagicos.js" defer></script>
+</head>
+
+<body>
+    <div id="principal">
+        <header>
+            <!-- <img src="./imagenes/Cabecera.png"> -->
+        </header>
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="#" onclick="javascript:datosHarryPotter('Gryffindor')">
+                        <img src="./imagenes/Griffindor.png" alt="Portada" class="nav-icon">
+                        <span class="nav-text">Griffindor</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="javascript:datosHarryPotter('Hufflepuff')">
+                        <img src="./imagenes/Hufflepuff.png" alt="Personajes" class="nav-icon">
+                        <span class="nav-text">Hufflepuff</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="javascript:datosHarryPotter('Ravenclaw')">
+                        <img src="./imagenes/Ravenclaw.png" alt="Libros" class="nav-icon">
+                        <span class="nav-text">Ravenclaw</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="javascript:datosHarryPotter('Slytherin')">
+                        <img src="./imagenes/Slicterin.png" alt="Películas" class="nav-icon">
+                        <span class="nav-text">Slytherin</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="javascript:datosHarryPotter('SinCasa')">
+                        <img src="./imagenes/Deafault.png" alt="Películas" class="nav-icon">
+                        <span class="nav-text">Sin Casa</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <main>
+            <div id="contenido">
+
+            </div>
+            <aside>
+                <ul>
+                    <li><a href="https://www.wizardingworld.com/" target="_blank">Wizarding World Oficial</a></li>
+                    <li><a href="https://harrypotter.fandom.com/es/wiki/Harry_Potter_Wiki" target="_blank">HP Fandom</a>
+                    </li>
+                    <li><a href="https://www.universalorlando.com/web/es/us/theme-parks/the-wizarding-world-of-harry-potter"
+                            target="_blank">The Wizarding World</a></li>
+                </ul>
+            </aside>
+        </main>
+
+        <footer>
+            <p>Página web creada para fans del mundo mágico de Harry Potter ⚡</p>
+        </footer>
+    </div>
+</body>
+
+</html>

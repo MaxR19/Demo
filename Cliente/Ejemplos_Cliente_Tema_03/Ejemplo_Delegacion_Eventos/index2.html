@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Tareas</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            max-width: 800px;
+            margin: auto auto;
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            /* Alinea verticalmente los elementos */
+            justify-content: space-between;
+            /* Distribuye el espacio horizontalmente */
+            gap: 10px;
+            /* Espacio entre elementos */
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            list-style: none;
+        }
+
+        .estado {
+            margin: 10px 10px;
+        }
+
+        button {
+            padding: 6px 12px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button.modificar {
+            background-color: #007bff;
+            color: white;
+        }
+
+        button.eliminar {
+            background-color: #ff3b3b;
+            color: white;
+        }
+
+        /* Colores de estados */
+        .pendiente {
+            background-color: #ffa94d;
+            /* naranja */
+        }
+
+        .en-proceso {
+            background-color: #fff475;
+            /* amarillo */
+        }
+
+        .completado {
+            background-color: #a3f7bf;
+            /* verde */
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>📋 Lista de Tareas</h1>
+
+    <input type="text" id="nuevaTarea" placeholder="Nombre de la tarea" />
+    <select id="estadoTarea">
+        <option value="pendiente">Pendiente</option>
+        <option value="en proceso">En proceso</option>
+        <option value="completado">Completado</option>
+    </select>
+    <button id="agregar">Agregar tarea</button>
+
+    <ul id="lista"></ul>
+
+    <script src="script2.js"></script>
+</body>
+
+</html>

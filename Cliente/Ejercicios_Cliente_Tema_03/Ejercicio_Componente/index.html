@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ejemplo de Custom Element</title>
+    <link rel="stylesheet" href="estilos.css">
+    <style>
+      mi-contador {
+        display: inline-block;
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        font-size: 18px;
+        border-radius: 8px;
+        cursor: pointer;
+        user-select: none;
+      }
+      mi-restador {
+        display: inline-block;
+        background-color: #df1f4f;
+        color: white;
+        padding: 10px 20px;
+        font-size: 18px;
+        border-radius: 8px;
+        cursor: pointer;
+        user-select: none;
+      }
+      mi-multiplicador {
+        display: inline-block;
+        background-color: #d61fdf;
+        color: white;
+        padding: 10px 20px;
+        font-size: 18px;
+        border-radius: 8px;
+        cursor: pointer;
+        user-select: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Ejemplo de Custom Element: &lt;mi-contador&gt;</h1>
+
+    <!-- Uso del elemento personalizado -->
+    <mi-contador valor="0" pepino="Hola Pepino"></mi-contador>
+    <mi-multiplicador valor="1"></mi-multiplicador>
+
+    <mi-restador valorrestado="30"></mi-restador>
+
+    <mi-tabla titulo="30"></mi-tabla>
+
+    <mi-div-tabluno titulo="30"></mi-div-tabluno>
+    <mi-div-tabluno-a-child titulo="30"></mi-div-tabluno-a-child>
+
+    <script src="funciones.js" defer></script>
+  </body>
+</html>

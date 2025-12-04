@@ -1,0 +1,368 @@
+/* Estilo mágico para la página de Harry Potter */
+
+body {
+    background: url('./imagenes/Fondo.png') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Georgia', serif;
+    color: #f5f5f5;
+    margin: 0;
+}
+
+#principal {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    min-height: 100vh;
+}
+
+header {
+    height: 200px;
+    background: url('./imagenes/Cabecera.png')  center;
+    background-size: contain;
+    animation: glow 3s infinite alternate;
+}
+
+@keyframes glow {
+    from { filter: drop-shadow(0 0 5px gold); }
+    to { filter: drop-shadow(0 0 20px #8b5cf6); }
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+nav a {
+    color: gold;
+    text-decoration: none;
+    font-size: 1.3rem;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    text-shadow: 0 0 10px gold;
+    transform: scale(1.1);
+}
+
+main {
+    display: flex;
+    margin-top: 20px;
+}
+
+#contenido {
+    flex: 3;
+    padding: 20px;
+    backdrop-filter: blur(5px);
+}
+
+aside {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-left: 2px solid gold;
+}
+
+aside a {
+    color: #d4c7ff;
+    text-decoration: none;
+}
+
+aside a:hover {
+    text-shadow: 0 0 10px #a78bfa;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    border-top: 1px solid gold;
+    font-size: 1.1rem;
+}
+
+/* --- ESTILOS GENERALES PARA EL CONTENEDOR DE CADA CASA --- */
+.casa {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Más flexible, 4 por fila en pantallas grandes */
+    gap: 25px; /* Más espacio entre los personajes */
+    padding: 30px;
+    margin-bottom: 40px;
+    border-radius: 15px; /* Bordes más redondeados */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada para el bloque de la casa */
+    transition: transform 0.3s ease-in-out; /* Transición suave al pasar el ratón */
+}
+
+/* Efecto al pasar el ratón por el bloque de la casa */
+.casa:hover {
+    transform: translateY(-5px);
+}
+
+/* --- ESTILOS PARA LOS TÍTULOS DE CADA CASA --- */
+.casa h1 {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 2.8em; /* Títulos más grandes */
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid; /* El color del borde se definirá por cada casa */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4); /* Sombra de texto más suave */
+    font-family: 'Georgia', serif; /* Una fuente más clásica */
+}
+
+/* --- ESTILOS PARA CADA TARJETA DE PERSONAJE --- */
+.personaje {
+    text-align: center;
+    background-color: #f8f8f8; /* Fondo claro para las tarjetas de personaje */
+    color: #333; /* Texto más oscuro para contraste */
+    padding: 15px;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra más suave y extendida */
+    transition: all 0.3s ease-in-out; /* Transiciones para interactividad */
+    cursor: pointer; /* Indica que es interactuable */
+    transform: scale(1); /* Escala inicial */
+}
+
+/* Efecto de "levantar" la tarjeta al pasar el ratón */
+.personaje:hover {
+    transform: translateY(-8px) scale(1.03); /* Se levanta y agranda ligeramente */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Sombra más fuerte al pasar el ratón */
+    background-color: #fff; /* Fondo un poco más blanco al pasar el ratón */
+}
+
+.personaje img {
+    width: 100%;
+    max-width: 180px; /* Imágenes un poco más grandes */
+    height: auto;
+    border-radius: 50%;
+    margin: 15px 0 10px; /* Más espacio alrededor de la imagen */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+    border: 4px solid; /* El color del borde se definirá por cada casa */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Sombra suave para la imagen */
+}
+
+.personaje h3 {
+    margin: 10px 0 5px;
+    font-size: 1.5em; /* Títulos de personaje más grandes */
+    color: #333; /* Color de texto más neutro, el énfasis vendrá del borde y el fondo */
+    font-family: 'Lora', serif; /* Otra fuente agradable */
+}
+
+.personaje p {
+    font-size: 0.95em;
+    color: #555;
+    line-height: 1.4; /* Mejor legibilidad */
+    min-height: 40px; /* Para evitar saltos si un párrafo está vacío */
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limita el texto a 2 líneas */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Añade puntos suspensivos si el texto es muy largo */
+}
+
+/* --- ESTILOS ESPECÍFICOS PARA CADA CASA (¡Aquí está la magia del color!) --- */
+
+/* GRYFFINDOR */
+#Gryffindor {
+    background-image: linear-gradient(to bottom right, #8b0000, #b22222); /* Degradado rojo */
+    color: #f0f0f0; /* Texto claro para el bloque de la casa */
+}
+#Gryffindor h1 {
+    color: gold;
+    border-color: gold;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+}
+#Gryffindor .personaje img {
+    border-color: gold;
+}
+
+/* SLYTHERIN */
+#Slytherin {
+    background-image: linear-gradient(to bottom right, #004d00, #2e8b57); /* Degradado verde esmeralda */
+    color: #f0f0f0;
+}
+#Slytherin h1 {
+    color: silver;
+    border-color: silver;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+}
+#Slytherin .personaje img {
+    border-color: silver;
+}
+
+/* HUFFLEPUFF */
+#Hufflepuff {
+    background-image: linear-gradient(to bottom right, #ffd700, #ffdd33); /* Degradado dorado */
+    color: #333; /* Texto oscuro para el bloque de la casa */
+}
+#Hufflepuff h1 {
+    color: #663300; /* Marrón oscuro */
+    border-color: #663300;
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.6);
+}
+#Hufflepuff .personaje img {
+    border-color: #663300;
+}
+
+/* RAVENCLAW */
+#Ravenclaw {
+    background-image: linear-gradient(to bottom right, #00008b, #4169e1); /* Degradado azul rey */
+    color: #f0f0f0;
+}
+#Ravenclaw h1 {
+    color: #a9a9a9; /* Gris oscuro para el águila/plata */
+    border-color: #a9a9a9;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+}
+#Ravenclaw .personaje img {
+    border-color: #a9a9a9;
+}
+
+/* NO AFFILIATION (o cualquier otra categoría sin ID de casa) */
+.casa:not([id]) {
+    background-image: linear-gradient(to bottom right, #444, #666); /* Degradado gris neutro */
+    color: #f0f0f0;
+}
+.casa:not([id]) h1 {
+    color: #ddd;
+    border-color: #ddd;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+}
+.casa:not([id]) .personaje img {
+    border-color: #ddd;
+}
+
+/* --- ESTILOS PARA EL CONTENIDO PRINCIPAL --- */
+#contenido {
+    max-width: 1200px; /* Ancho máximo para el contenido principal */
+    margin: 50px auto; /* Centra el contenido y añade margen superior/inferior */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente para el contenido principal */
+    border-radius: 10px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+}
+
+#contenido h1 {
+    font-size: 3.5em;
+    color: gold;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Cinzel Decorative', cursive; /* Fuente elegante y mágica */
+}
+
+#contenido p {
+    font-size: 1.3em;
+    color: #ccc;
+    text-align: center;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+/* --- FUENTES DE GOOGLE FONTS (Añadir en el <head> de tu HTML) --- */
+/*
+Para que las fuentes 'Georgia', 'Lora' y 'Cinzel Decorative' funcionen,
+debes enlazarlas en la sección <head> de tu documento HTML:
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+*/
+
+/* --- RESPONSIVE DESIGN (para que se vea bien en móviles) --- */
+@media (max-width: 1024px) {
+    .casa {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* 3 o 4 por fila en tablets */
+        padding: 25px;
+        gap: 20px;
+    }
+    .personaje img {
+        max-width: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .casa {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* 2 o 3 por fila en tablets pequeñas */
+        padding: 20px;
+        gap: 15px;
+    }
+    .personaje img {
+        max-width: 120px;
+    }
+    #contenido h1 {
+        font-size: 2.5em;
+    }
+    #contenido p {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .casa {
+        grid-template-columns: 1fr; /* 1 por fila en móviles */
+        padding: 15px;
+        gap: 10px;
+    }
+    .personaje img {
+        max-width: 100px;
+    }
+    .personaje h3 {
+        font-size: 1.3em;
+    }
+    .personaje p {
+        font-size: 0.85em;
+    }
+    #contenido h1 {
+        font-size: 2em;
+    }
+    #contenido p {
+        font-size: 1em;
+    }
+}
+
+/* Estilos básicos para el menú de navegación */
+nav ul {
+    list-style: none; /* Elimina los puntos de la lista */
+    padding: 0;
+    margin: 0;
+    display: flex; /* **¡Clave para la disposición horizontal!** */
+    justify-content: space-around; /* Distribuye el espacio entre los elementos */
+    background-color: #333; /* Fondo de la barra de navegación */
+}
+
+nav li {
+    margin: 0 10px; /* Espacio horizontal entre los elementos */
+}
+
+/* Estilos para los enlaces dentro del nav */
+nav a {
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    color: white;
+    display: flex; /* Permite centrar y alinear la imagen y el texto */
+    flex-direction: column; /* Coloca la imagen encima del texto */
+    align-items: center; /* Centra el contenido horizontalmente */
+    padding: 10px 15px;
+    text-align: center;
+}
+
+/* Estilos para las imágenes/iconos */
+.nav-icon {
+    width: 40px; /* Tamaño de la imagen (ajusta a tu necesidad) */
+    height: 40px;
+    object-fit: cover; /* Asegura que la imagen se vea bien dentro del tamaño */
+    margin-bottom: 5px; /* Espacio entre la imagen y el texto */
+    border-radius: 5px; /* Opcional: para darle un aspecto más suave */
+}
+
+/* Opcional: Estilo al pasar el ratón */
+nav a:hover {
+    background-color: #575757;
+}
+
+/* Opcional: Ocultar el texto si solo quieres mostrar las imágenes */
+.nav-text {
+    font-size: 0.8em;
+}
+
+/* Si prefieres solo imágenes y no texto, puedes ocultar la clase .nav-text */
+/* .nav-text { display: none; } */
