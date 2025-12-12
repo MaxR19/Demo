@@ -20,6 +20,7 @@ if (estaLogueado()) {
 <head>
     <meta charset="UTF-8">
     <title>Inicio</title>
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 

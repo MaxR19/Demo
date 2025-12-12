@@ -1,0 +1,301 @@
+/* ===========================
+   style.css - Proyecto Gestión Usuarios / Clientes / Contactos
+   Funciona con tu HTML actual (sin clases)
+   =========================== */
+
+/* Reset básico */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #0b1220;
+  --card: #111a2e;
+  --card-2: #0f172a;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --border: rgba(255, 255, 255, 0.10);
+  --shadow: 0 8px 30px rgba(0,0,0,0.35);
+  --accent: #60a5fa;
+  --accent-2: #34d399;
+
+  --danger: #f87171;
+  --warning: #fbbf24;
+
+  --radius: 14px;
+  --radius-sm: 10px;
+  --maxw: 980px;
+  --pad: 18px;
+
+  --font: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* Fondo y tipografía */
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  background: radial-gradient(1200px 600px at 15% 10%, rgba(96,165,250,0.18), transparent 55%),
+              radial-gradient(1000px 600px at 90% 20%, rgba(52,211,153,0.12), transparent 55%),
+              var(--bg);
+  color: var(--text);
+  line-height: 1.45;
+  padding: 28px 14px;
+}
+
+/* Contenedor: como tu HTML no usa wrappers, centramos “lo mejor posible” */
+body > h1,
+body > h2,
+body > h3,
+body > p,
+body > table,
+body > form,
+body > div,
+body > ul,
+body > ol {
+  max-width: var(--maxw);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Títulos */
+h1, h2, h3 {
+  margin: 0 0 12px 0;
+  letter-spacing: 0.2px;
+}
+
+h1 { font-size: 28px; }
+h2 { font-size: 22px; margin-top: 6px; }
+h3 { font-size: 16px; margin-top: 22px; color: #c7d2fe; }
+
+/* Textos */
+p {
+  margin: 10px auto;
+  color: var(--text);
+}
+
+p small {
+  color: var(--muted);
+}
+
+/* Enlaces */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:focus {
+  outline: 3px solid rgba(96,165,250,0.35);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+/* Tarjeta automática para formularios y tablas (da “look app”) */
+form,
+table {
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+/* Formularios */
+form {
+  padding: var(--pad);
+  margin: 14px auto;
+}
+
+label {
+  display: inline-block;
+  color: #dbeafe;
+  font-weight: 650;
+  margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+select {
+  width: min(520px, 100%);
+  display: block;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(15,23,42,0.65);
+  color: var(--text);
+  margin-top: 6px;
+  margin-bottom: 14px;
+  outline: none;
+}
+
+input::placeholder {
+  color: rgba(229,231,235,0.55);
+}
+
+input:focus,
+select:focus {
+  border-color: rgba(96,165,250,0.7);
+  box-shadow: 0 0 0 4px rgba(96,165,250,0.18);
+}
+
+select {
+  cursor: pointer;
+}
+
+/* Checkbox */
+input[type="checkbox"] {
+  transform: translateY(1px);
+  accent-color: var(--accent);
+}
+
+/* Botones */
+button {
+  appearance: none;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: linear-gradient(180deg, rgba(96,165,250,0.9), rgba(96,165,250,0.65));
+  color: #061022;
+  font-weight: 800;
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform .06s ease, filter .2s ease, box-shadow .2s ease;
+  box-shadow: 0 10px 24px rgba(96,165,250,0.18);
+}
+
+button:hover {
+  filter: brightness(1.05);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+button:focus {
+  outline: 3px solid rgba(96,165,250,0.35);
+  outline-offset: 3px;
+}
+
+/* Botones “peligro” opcionales por clase (si luego quieres usarlas) */
+.btn-danger {
+  background: linear-gradient(180deg, rgba(248,113,113,0.95), rgba(248,113,113,0.70));
+  box-shadow: 0 10px 24px rgba(248,113,113,0.18);
+}
+
+/* Tablas */
+table {
+  width: min(var(--maxw), 100%);
+  border-collapse: collapse;
+  margin: 14px auto;
+}
+
+table tr:first-child th {
+  background: rgba(96,165,250,0.12);
+  color: #dbeafe;
+  font-weight: 800;
+  text-transform: none;
+  letter-spacing: 0.2px;
+}
+
+th, td {
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+tr:nth-child(even) td {
+  background: rgba(255,255,255,0.02);
+}
+
+tr:hover td {
+  background: rgba(96,165,250,0.06);
+}
+
+/* Tablas con bordes antiguos (tu HTML usa border="1"): lo suavizamos */
+table[border="1"] {
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* Mensajes: tu HTML pone estilos inline color:green/red, lo soportamos */
+p[style*="color:green"],
+p[style*="color: green"] {
+  background: rgba(52,211,153,0.12);
+  border: 1px solid rgba(52,211,153,0.25);
+  color: #d1fae5 !important;
+  padding: 10px 12px;
+  border-radius: 12px;
+  max-width: var(--maxw);
+}
+
+p[style*="color:red"],
+p[style*="color: red"] {
+  background: rgba(248,113,113,0.12);
+  border: 1px solid rgba(248,113,113,0.25);
+  color: #fee2e2 !important;
+  padding: 10px 12px;
+  border-radius: 12px;
+  max-width: var(--maxw);
+}
+
+/* Opcional: si luego quieres usar clases (más limpio) */
+.msg-success {
+  background: rgba(52,211,153,0.12);
+  border: 1px solid rgba(52,211,153,0.25);
+  color: #d1fae5;
+  padding: 10px 12px;
+  border-radius: 12px;
+}
+
+.msg-error {
+  background: rgba(248,113,113,0.12);
+  border: 1px solid rgba(248,113,113,0.25);
+  color: #fee2e2;
+  padding: 10px 12px;
+  border-radius: 12px;
+}
+
+/* Links tipo “volver” */
+a[href*="dashboard.php"],
+a[href*="index.php"],
+a[href*="login.php"],
+a[href*="registro.php"],
+a[href*="gestion_clientes.php"],
+a[href*="contactos.php"] {
+  display: inline-block;
+  margin-top: 8px;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 720px) {
+  body { padding: 18px 10px; }
+  h1 { font-size: 24px; }
+  h2 { font-size: 20px; }
+
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  th, td { padding: 9px 10px; }
+
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="number"],
+  select {
+    width: 100%;
+  }
+}

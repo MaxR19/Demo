@@ -7,6 +7,7 @@ require_once 'session_check.php';
 <head>
     <meta charset="UTF-8">
     <title>Panel de Usuario</title>
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 

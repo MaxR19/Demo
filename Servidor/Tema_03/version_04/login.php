@@ -25,6 +25,7 @@ $usuario_cookie = $_COOKIE['recordar_usuario'] ?? '';
 <head>
     <meta charset="UTF-8">
     <title>Iniciar sesión</title>
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
