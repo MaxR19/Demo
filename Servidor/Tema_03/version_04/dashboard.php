@@ -1,21 +1,7 @@
 <?php
-
-/*
-Este archivo es la zona privada general a la que acceden todos los usuarios después de 
-iniciar sesión correctamente, ya sean administradores o usuarios normales.
-
-Objetivo de dashboard.php
-Mostrar un mensaje de bienvenida.
-Mostrar el rol del usuario.
-Si el usuario es admin, mostrar un enlace a la zona de administración.
-Mostrar opción de cerrar sesión.
-Proteger el acceso usando session_check.php.
-*/
-
 require_once 'init.php';
 require_once 'session_check.php';
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -24,12 +10,16 @@ require_once 'session_check.php';
 </head>
 <body>
 
-<h2>Bienvenido, <?= htmlspecialchars($_SESSION['usuario']) ?></h2>
+<h2>Bienvenido, <?= htmlspecialchars($_SESSION['usuario'], ENT_QUOTES, 'UTF-8') ?></h2>
 
 <p>Tu rol actual: <?= esAdmin() ? 'Administrador' : 'Usuario estándar' ?></p>
 
 <?php if (esAdmin()): ?>
     <p><a href="admin.php">Ir a la zona de administración</a></p>
+
+    <!-- Menú nuevo -->
+    <p><a href="gestion_clientes.php">Gestión de clientes</a></p>
+    <p><a href="contactos.php">Listado global de contactos</a></p>
 <?php endif; ?>
 
 <p><a href="profile.php">Ver/Editar Perfil</a></p>

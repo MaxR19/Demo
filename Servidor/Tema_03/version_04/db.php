@@ -1,19 +1,12 @@
 <?php
 
-/*
-Objetivo de db.php
-Este archivo contiene la función conectarDB(), que:
-Se conecta a la base de datos SQLite.
-Crea automáticamente las tablas roles y usuarios si no existen.
-Inserta los roles iniciales (admin, usuario) si no están presentes.
-Inserta un usuario administrador por defecto (admin / admin123) si no hay usuarios en el 
-sistema.
-*/
-
 function conectarDB() {
     // Crear conexión PDO con SQLite
     $db = new PDO('sqlite:database.db');
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    // Activar claves foráneas en SQLite (importante para ON DELETE CASCADE)
+    $db->exec("PRAGMA foreign_keys = ON;");
 
     // Crear tabla de roles
     $db->exec("
@@ -35,8 +28,8 @@ function conectarDB() {
         );
     ");
 
-    // Crear tabla de clientes
-        $db->exec("
+    // Crear tabla de clientes (si ya existía no pasa nada)
+    $db->exec("
         CREATE TABLE IF NOT EXISTS clientes (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             nombre TEXT NOT NULL,
@@ -44,6 +37,19 @@ function conectarDB() {
             edad INTEGER NOT NULL,
             email TEXT NOT NULL UNIQUE,
             documento TEXT NOT NULL UNIQUE
+        );
+    ");
+
+    // Crear tabla de contactos (relacionada con clientes)
+    $db->exec("
+        CREATE TABLE IF NOT EXISTS contactos (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            idCliente INTEGER NOT NULL,
+            nombre TEXT NOT NULL,
+            apellidos TEXT NOT NULL,
+            email TEXT NOT NULL,
+            telefono TEXT NOT NULL,
+            FOREIGN KEY (idCliente) REFERENCES clientes(id) ON DELETE CASCADE
         );
     ");
 
