@@ -10,7 +10,7 @@ Este archivo es responsable de:
 /*
 Esta función es una utilidad genérica para consumir APIs:
 Recibiendo una URL como parámetro, usa fetch para hacer una petición HTTP a esa URL, 
-con await espera que llegue la respuesta. 
+con await esperando a que llegue la respuesta. 
 Esta respuesta la convierte a JSON y lo devuelve como un objeto.   
 */
 
@@ -36,7 +36,7 @@ async function datosDragonBall() {
     
     let data = await llamadaAPI(url);
     console.log("data", data);
-    let oResult = data.items;
+    // let oResult = data.items;
 
     // -------------------------------------------------------
 
